@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .mySlides {
+            display: none;
+            height: inherit;
+        }
+
+        .sliderImg {
+            vertical-align: middle;
+            height: 100%;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            width: 75vw;
+            position: relative;
+            margin: auto;
+            height: 60vh;
+        }
+
+        /* Caption text */
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+
+        @media (max-width:960px) {
+            .slideshow-container {
+                width: 80vw;
+                height: 50vh;
+            }
+        }
+
+        @media (max-width:720px) {
+            .slideshow-container {
+                width: 85vw;
+                height: 35vh;
+            }
+        }
+
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img class="sliderImg" src="../wallpaperflare.com_wallpaper (2).jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img class="sliderImg" src="../wallpaperflare.com_wallpaper (4).jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img class="sliderImg" src="../wallpaperflare.com_wallpaper (6).jpg" style="width:100%">
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2500); // Change image every 2 seconds
+        }
+        showSlides();
+    </script>
+</body>
+
+</html>
